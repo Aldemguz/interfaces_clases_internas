@@ -20,9 +20,4 @@ public class Jefatura extends Empleado {
         return sueldoJefe+incentivo;
     }
     
-    @Override
-    public String dimeDescripcion(){
-        return "nombre: "+super.dimeNombre()+", id: "+super.dimeId()+
-                ", sueldo: "+dimeSueldo()+", fecha contrato: "+super.dimeFechaContrato();
-    }
 }

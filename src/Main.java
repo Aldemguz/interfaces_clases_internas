@@ -1,33 +1,24 @@
 /*
- Interfaces y clases internas. Pildoras informaticas.
-
-interfaces: Conjunto de directrices que deben cumplir las clases. (suena a clases abstract)
-las interfaces establecen los comportamientos que deben cumplir las clases q las implementan
-
-las interfaces solo contienen metodos abstractos y constantes.
-las interfaces se almacenan en fichero.class
-
-no se pueden instanciar (usar operador new).
-
-todos los metodos son metodos publicos y abstractos
-
-class <name1> extends <class2> implements <interfaz1>,<interfaz2>...
+Practicando interfacez... Pildoras informaticas
  * @author aldemaro
  */
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-       Persona [] lasPersonas = new Persona[3];
-       lasPersonas[0] = new Empleado("Aldemaro",6000,2018,8,21);
-       lasPersonas[1] = new Alumno("Aldemaro","Ing de Sistemas");
-       lasPersonas[2] = new Jefatura("Pepe",70000,2016,3,15);
-       
-       for(Persona e: lasPersonas){
-           System.out.println(e.dimeDescripcion());
-            }
+        Jefatura jefe_RRHH = new Jefatura("Aldemaro",90000,2018,8,21);
+        jefe_RRHH.estableceIncentivo(15000);
+        Empleado [] losEmpleados = new Empleado[5];
+        losEmpleados[0] = new Empleado("Edicson",50000,2017,6,20);
+        losEmpleados[1] = new Empleado("Edicson",50000,2017,6,20);
+        losEmpleados[2] = new Empleado("Edicson",50000,2017,6,20);
+        losEmpleados[3] = jefe_RRHH;
+        losEmpleados[4] = new Jefatura("Irina",90000,2015,6,12);
+        
+        for(Empleado e: losEmpleados){
+            System.out.println("nombre: "+e.dimeNombre()+", id: "+e.dameId()+", sueldo: "
+                    +e.dimeSueldo());
+        }
+        
     }
     
 }
