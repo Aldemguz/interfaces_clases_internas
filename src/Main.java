@@ -36,6 +36,8 @@ public class Main {
                     +e.dimeSueldo());
         }
         
+        System.out.println(jefe_RRHH.tomarDecisiones("Invertir en la bolsa"));
+        
     }
     
 }

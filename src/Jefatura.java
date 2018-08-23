@@ -2,7 +2,7 @@
 
  * @author aldemaro
  */
-public class Jefatura extends Empleado {
+public class Jefatura extends Empleado implements Jefes {
     private double incentivo;
     
     public Jefatura(String nombre, double sueldo, int agno, int mes, int dia){
@@ -14,12 +14,10 @@ public class Jefatura extends Empleado {
         this.incentivo = incentivo;
         this.setSueldo(super.dimeSueldo()+incentivo);
     }
-    
-    //@Override
-    //public double dimeSueldo(){ //Getter y Setter /no debería hacerse
-        //double sueldoJefe = super.dimeSueldo()+incentivo;
-        //super.setSueldo(sueldoJefe);
-     //   return sueldo;
-    //}
+   
+    @Override
+    public String tomarDecisiones(String decision){
+        return "Un miembro tomo la decision de: "+decision;
+    } 
     
 }
