@@ -15,9 +15,10 @@ public class Jefatura extends Empleado {
     }
     
     @Override
-    public double dimeSueldo(){
-        double sueldoJefe = super.dimeSueldo();
-        return sueldoJefe+incentivo;
+    public double dimeSueldo(){ //Getter y Setter /no debería hacerse
+        double sueldoJefe = super.dimeSueldo()+incentivo;
+        super.setSueldo(sueldoJefe);
+        return sueldoJefe;
     }
     
 }

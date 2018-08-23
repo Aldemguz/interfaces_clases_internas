@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Empleado {
+public class Empleado implements Comparable{
     // Attributes
     private final String nombre;
     private double sueldo;
@@ -37,10 +37,21 @@ public class Empleado {
     public Date dimeFechaContrato(){ //Getter
         return altaContrato;
     }
+    public void setSueldo(double sueldo){
+        this.sueldo = sueldo;
+    }
     
     public void subeSueldo(double porcentaje){
         double aumento = sueldo*porcentaje/100;
         sueldo+=aumento;
+    }
+    
+    @Override
+    public int compareTo(Object objeto){
+        Empleado otroEmpleado = (Empleado)objeto;
+        if(this.sueldo<otroEmpleado.sueldo)return -1;
+        if(this.sueldo>otroEmpleado.sueldo)return 1;
+        return 0;
     }
     
 }
