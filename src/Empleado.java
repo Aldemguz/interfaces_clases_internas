@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Empleado implements Comparable{
+public class Empleado implements Comparable, Trabajadores {
     // Attributes
     private final String nombre;
     private double sueldo;
@@ -52,6 +52,11 @@ public class Empleado implements Comparable{
         if(this.sueldo<otroEmpleado.sueldo)return -1;
         if(this.sueldo>otroEmpleado.sueldo)return 1;
         return 0;
+    }
+    
+    @Override
+    public double estableceBonus(double gratificacion){
+        return Trabajadores.bonus_base+gratificacion;
     }
     
 }

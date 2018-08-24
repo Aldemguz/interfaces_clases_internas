@@ -20,4 +20,10 @@ public class Jefatura extends Empleado implements Jefes {
         return "Un miembro tomo la decision de: "+decision;
     } 
     
+    @Override
+    public double estableceBonus(double gratificacion){
+        double prima=2000;
+        return Trabajadores.bonus_base+gratificacion+prima;
+    }
+    
 }

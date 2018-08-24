@@ -2,6 +2,8 @@
 Practicando interfacez... Pildoras informaticas
 Todas las interfaces son abstractas q tienen puras constantes y metodos abstractos
 usando interfaz para utilizar el metodo sort de arrays. 
+En las interfaces, por convencion no suele colocarse "public abstract" se sobreentienden
+en los metodos.
 uso de stanceof
  * @author aldemaro
  */
@@ -19,7 +21,7 @@ public class Main {
         losEmpleados[3] = jefe_RRHH;
         losEmpleados[4] = new Jefatura("Jefe 2",90000,2015,6,12);
         Empleado director_comercial= new Jefatura("Sandra", 86000, 2013,4,13);
-        
+        Jefatura jefa_Finanzas = (Jefatura) losEmpleados[4];
         Empleado ejemplo = new Empleado("Elisabeth",25000,2013,2,15); //???
         
         if(director_comercial instanceof Jefatura){
@@ -30,13 +32,18 @@ public class Main {
             System.out.println("Implementa la interfaz comparable");
         }
         
-        Arrays.sort(losEmpleados);
+        jefa_Finanzas.estableceBonus(500);
+       // Arrays.sort(losEmpleados);
         for(Empleado e: losEmpleados){
             System.out.println("nombre: "+e.dimeNombre()+", id: "+e.dameId()+", sueldo: "
                     +e.dimeSueldo());
         }
+        System.out.println("Jefe Finanza: "+jefa_Finanzas.dimeNombre()
+                +jefa_Finanzas.estableceBonus(500));
         
-        System.out.println(jefe_RRHH.tomarDecisiones("Invertir en la bolsa"));
+        System.out.println("Mi empleado 3: "+losEmpleados[2].dimeNombre()+",tiene un bono de: "
+        +losEmpleados[2].estableceBonus(200));
+        
         
     }
     
